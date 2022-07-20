@@ -1,0 +1,23 @@
+{
+  "name": "projetos-github",
+  "version": "1.0.0",
+  "description": "Projeto de agenda no GitHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eduardo-PH/Projetos-GitHub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eduardo-PH/Projetos-GitHub/issues"
+  },
+  "homepage": "https://github.com/Eduardo-PH/Projetos-GitHub#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
