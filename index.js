@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const Cad = require('./models/Cad')
 const Emp = require('./models/Emp')
 
+    app.use(express.static('public'));
+
 // Configurando Template Engine
     app.engine('handlebars', handlebars.engine({
         defaultLayout: 'main',

@@ -2,13 +2,13 @@
 <hr>
 {{#each posts}}
     <small>{{createdAt}}</small>
-    <h1>{{nome}}</h1>
-    <p>{{cnpj}}</p>
-    <p>{{data}}</p>
-    <p>{{email}}</p>
-    <p>{{telefone}}</p>
-    <p>{{cep}}</p>
-    <p>{{endereco}}</p>
+    <h2>{{nome}}</h2>
+    <p>CNPJ | {{cnpj}}</p>
+    <p>Data de Fundação | {{data}}</p>
+    <p>E-mail comercial | {{email}}</p>
+    <p>Telefone | {{telefone}}</p>
+    <p>CEP | {{cep}}</p>
+    <p>Endereço | {{endereco}}</p>
     <a href="/deletar/{{id}}"><button>Deletar</button></a>
     <hr>
 {{/each}}
