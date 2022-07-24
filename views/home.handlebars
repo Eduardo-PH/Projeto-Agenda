@@ -1,1 +1,16 @@
-<h1>Lista de cadastros</h1>
+<h1>Lista de empresas</h1>
+<hr>
+{{#each posts}}
+    <small>{{createdAt}}</small>
+    <h1>{{nome}}</h1>
+    <p>{{cnpj}}</p>
+    <p>{{data}}</p>
+    <p>{{email}}</p>
+    <p>{{telefone}}</p>
+    <p>{{cep}}</p>
+    <p>{{endereco}}</p>
+    <a href="/deletar/{{id}}"><button>Deletar</button></a>
+    <hr>
+{{/each}}
+    <a href="/cademp"><button>Cadastrar empresas</button></a>
+    <a href="/caduse"><button>cadastrar usuario</button></a>

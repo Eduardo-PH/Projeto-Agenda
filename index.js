@@ -6,7 +6,13 @@ const Cad = require('./models/Cad')
 const Emp = require('./models/Emp')
 
 // Configurando Template Engine
-    app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+    app.engine('handlebars', handlebars.engine({
+        defaultLayout: 'main',
+        runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+            allowProtoMethodsByDefault: true,
+        },
+    }));
     app.set('view engine', 'handlebars');
 // Body Parser
     app.use(bodyParser.urlencoded({extended: false}))
@@ -14,7 +20,9 @@ const Emp = require('./models/Emp')
 //Rotas
 
     app.get('/', function(req, res){
-        res.render('home')
+        Emp.findAll({order: [['id', 'DESC']]}).then(function(posts){
+            res.render('home', {posts: posts})
+        }) 
     })
 
     app.get('/caduse', function(req, res){
@@ -50,6 +58,14 @@ const Emp = require('./models/Emp')
          res.redirect('/')
         }).catch(function(erro){
          res.send("Houve um erro: " + erro)
+        })
+     })
+
+     app.get('/deletar/:id', function(req, res){
+        Emp.destroy({where: {'id': req.params.id}}).then(function(){
+            res.redirect('/cademp')
+        }).catch(function(erro){
+            res.send("Esta empresa não existe!")
         })
      })
 
