@@ -55,7 +55,10 @@ const Emp = require('./models/Emp')
          email: req.body.email,
          telefone: req.body.telefone,
          cep: req.body.cep,
-         endereco: req.body.endereco
+         endereco: req.body.endereco,
+         bairro: req.body.bairro,
+         cidade: req.body.cidade,
+         estado: req.body.estado
         }).then(function(){
          res.redirect('/')
         }).catch(function(erro){

@@ -21,6 +21,15 @@ const Emp = db.sequelize.define('empresas',{
       },
       endereco: {
         type: db.Sequelize.STRING
+      },
+      bairro: {
+        type: db.Sequelize.STRING
+      },
+      cidade: {
+        type: db.Sequelize.STRING
+      },
+      estado: {
+        type: db.Sequelize.STRING
       }
 })
 

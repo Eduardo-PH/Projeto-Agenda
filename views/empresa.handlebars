@@ -5,19 +5,19 @@
 
         function limpa_formulário_cep() {
             //Limpa valores do formulário de cep.
-            document.getElementById('rua').value = ("");
+            document.getElementById('endereco').value = ("");
             document.getElementById('bairro').value = ("");
             document.getElementById('cidade').value = ("");
-            document.getElementById('uf').value = ("");
+            document.getElementById('estado').value = ("");
         }
 
         function meu_callback(conteudo) {
             if (!("erro" in conteudo)) {
                 //Atualiza os campos com os valores.
-                document.getElementById('rua').value = (conteudo.logradouro);
+                document.getElementById('endereco').value = (conteudo.logradouro);
                 document.getElementById('bairro').value = (conteudo.bairro);
                 document.getElementById('cidade').value = (conteudo.localidade);
-                document.getElementById('uf').value = (conteudo.uf);
+                document.getElementById('estado').value = (conteudo.uf);
             } //end if.
             else {
                 //CEP não Encontrado.
@@ -41,10 +41,10 @@
                 if (validacep.test(cep)) {
 
                     //Preenche os campos com "..." enquanto consulta webservice.
-                    document.getElementById('rua').value = "...";
+                    document.getElementById('endereco').value = "...";
                     document.getElementById('bairro').value = "...";
                     document.getElementById('cidade').value = "...";
-                    document.getElementById('uf').value = "...";
+                    document.getElementById('estado').value = "...";
 
                     //Cria um elemento javascript.
                     var script = document.createElement('script');
@@ -91,13 +91,13 @@
                 <input id="cep" type="text" name="cep" value="" size="10" maxlength="9"
                 onblur="pesquisacep(this.value);" required />
                 <p>Endereço: </p>
-                <input id="rua" type="text" name="rua" /><br>
+                <input id="endereco" type="text" name="endereco" /><br>
                 <p>Bairro: </p>
                 <input id="bairro" type="text" name="bairro" size="40" />
                 <p>Cidade: </p>
                 <input id="cidade" type="text" name="cidade" size="40" />
                 <p>Estado: </p>
-                <input id="uf" type="text" name="uf" size="2" /><br>
+                <input id="estado" type="text" name="estado" size="2" /><br>
 
                 <button type="submit">Cadastrar</button>
 
@@ -105,4 +105,3 @@
         </div>
 
     </form>
-
